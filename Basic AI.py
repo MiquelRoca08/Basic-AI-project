@@ -1,21 +1,20 @@
 def calculate_pass_probability(study_hours, sleep_hours):
-    # Calcular puntaje de estudio
-    if study_hours < 1:
-        study_score = 0.2  # MUY BAJO
-    elif 1 <= study_hours <= 3:
-        study_score = 0.6  # BAJO
-    elif 3 < study_hours <= 6:
-        study_score = 0.9  # MEDIO
-    else:
-        study_score = 1.0  # ALTO 
 
-    # Calcular puntaje de sueño
-    if sleep_hours < 6:
-        sleep_score = 0.4  # MALO
-    elif 6 <= sleep_hours <= 9:
-        sleep_score = 0.9  # BUENO
+    if study_hours < 1:
+        study_score = 0.2
+    elif 1 <= study_hours <= 3:
+        study_score = 0.6
+    elif 3 < study_hours <= 6:
+        study_score = 0.9
     else:
-        sleep_score = 0.7 # MODERADO
+        study_score = 1.0
+
+    if sleep_hours < 6:
+        sleep_score = 0.4
+    elif 6 <= sleep_hours <= 9:
+        sleep_score = 0.9 
+    else:
+        sleep_score = 0.7
 
     study_weight = 0.7
     sleep_weight = 0.3
@@ -26,4 +25,5 @@ def calculate_pass_probability(study_hours, sleep_hours):
 
 x = float(input("Enter study hours: "))
 y = float(input("Enter sleep hours: "))
-print(f"Probabilidad de aprobar: {calculate_pass_probability(x, y)}%")
+
+print(f"Probability of passing: {calculate_pass_probability(x, y)}%")
