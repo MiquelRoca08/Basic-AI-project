@@ -16,8 +16,8 @@ def calculate_pass_probability(study_hours, sleep_hours):
     else:
         sleep_score = 0.7
 
-    study_weight = 0.7
-    sleep_weight = 0.3
+    study_weight = 0.8
+    sleep_weight = 0.2
 
     probability = (study_score * study_weight + sleep_score * sleep_weight) * 100
 
